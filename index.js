@@ -2,7 +2,7 @@ var express = require("express");
 var app = express();
 
 // create a GET request that returns an array of users
-app.get("/url", (req, res, next) =>{
+app.get("/", (req, res, next) =>{
   res.json(["Tony", "Lisa", "Michael", "Ginger", "Food"]);
 })
 
