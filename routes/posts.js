@@ -37,7 +37,24 @@ router.get('/:postId', async (req, res) => {
     res.json({ message:err })
   }
 })
-// deleteing a posts usign promises
-router.delete('', )
+// deleting a posts usign promises
+router.delete('/:postId', async (req, res) => {
+  try {
+    const removePost = await Post.remove({_id: req.params.postId})
+    res.json(removePost)
+  } catch (err) {
+    res.json({message:err})
+  }
+});
+
+// updating a post using  promises
+router.patch('/:postId', async (req,res) => {
+  try {
+     const updatePost =  await Post.updateOne({_id: req.params.postId}, {$set: {title: req.body.title}})
+     res.json(updatePost);
+  } catch (err){
+    res.json({ message: err })
+  }
+})
 
 module.exports = router;
