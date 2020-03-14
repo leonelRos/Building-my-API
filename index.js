@@ -18,8 +18,6 @@ app.get('/', (req, res) => {
   res.send('we are home')
 })
 
-
-
 // connect database
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true }, () =>
  console.log('connecte to DB!')
