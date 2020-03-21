@@ -14,8 +14,9 @@ try {
 // this submit a post with promises
 router.post('/',  async (req,res) => {
   const post =  new Post({
-    title: req.body.title,
-    description: req.body.description
+    name: req.body.name,
+    description: req.body.description,
+    favMovie: req.body.favMovie
   })
   const savePost = await post.save()
   try {
@@ -50,7 +51,7 @@ router.delete('/:postId', async (req, res) => {
 // updating a post using  promises
 router.patch('/:postId', async (req,res) => {
   try {
-     const updatePost =  await Post.updateOne({_id: req.params.postId}, {$set: {title: req.body.title}})
+     const updatePost =  await Post.updateOne({_id: req.params.postId}, {$set: {name: req.body.name}})
      res.json(updatePost);
   } catch (err){
     res.json({ message: err })
