@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 
 // connect database
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true }, () =>
- console.log('connecte to DB!')
+ console.log('connected to DB!')
 );
 
 // create a GET request that returns an array of users
