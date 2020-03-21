@@ -10,7 +10,6 @@ app.use(bodyParser.json());
 app.use(cors());
 const postsRoute = require('./routes/posts');
 
-
 app.use('/posts', postsRoute);
 
 // Routes
