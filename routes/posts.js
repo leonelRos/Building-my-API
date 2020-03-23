@@ -16,8 +16,9 @@ router.post('/',  async (req,res) => {
   const post =  new Post({
     name: req.body.name,
     description: req.body.description,
-    favMovie: req.body.favMovie
-  })
+    favMovie: req.body.favMovie,
+    movieRating: req.body.movieRating
+   })
   const savePost = await post.save()
   try {
   res.json(savePost)

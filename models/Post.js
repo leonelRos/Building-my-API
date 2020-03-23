@@ -14,6 +14,10 @@ const PostSchema = mongoose.Schema({
     type: String,
     require: true
   },
+  movieRating: {
+    type: Number,
+    require: true
+  },
   date: {
     type: String,
     default: Date.now
